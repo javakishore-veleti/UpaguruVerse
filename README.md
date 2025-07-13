@@ -22,6 +22,140 @@ Each sub-product is a modular repo under this umbrella.
 
 ---
 
+# UpaguruVerse Functional Plan
+
+_A functional breakdown of each module in the UpaguruVerse ecosystem, focusing on business value, user goals, and intelligent assistant capabilities._
+
+---
+
+## What Is UpaguruVerse?
+
+**UpaguruVerse** is an ecosystem of intelligent educational assistants — copilots that analyze, summarize, recommend, and guide educators, students, and school administrators.
+
+Each module below represents a sub-product focused on a specific layer of intelligence.
+
+---
+
+## Functional Modules and Use Cases
+
+### 1. upaguru-copilot
+
+**Purpose:** User-facing copilots — lesson planner, feedback generator, FAQ bot.
+
+**Key Functional Use Cases:**
+
+- Generate lesson plans by subject, topic, grade level.
+- Accept educator feedback and adapt plans iteratively.
+- Act as an FAQ assistant on curriculum content.
+- Personalize output by persona: teacher, admin, student.
+- Change tone/format (bullet list, paragraph, rubric).
+- Log and audit all conversations.
+- Embed feedback summaries into downstream reports.
+- Offer multilingual support for plans and answers.
+- Visualize lesson steps or timelines (Gantt-style).
+- Enable interactive feedback refinement.
+
+---
+
+### 2. upaguru-core
+
+**Purpose:** Orchestration logic — request routing, API management, session control.
+
+**Key Functional Use Cases:**
+
+- Route tasks to correct copilot (e.g., planner vs scorer).
+- Maintain agent state and session context.
+- Handle cross-repo API coordination (REST, async).
+- Enforce access control by role and institution.
+- Trigger scheduled events (e.g., daily summary agent).
+- Audit agent execution and performance.
+- Support failover/fallback for agents/models.
+- Aggregate multi-agent responses.
+- Provide observability/logging of all requests.
+- Manage copilot lifecycle and availability.
+
+---
+
+### 3. upaguru-sense
+
+**Purpose:** Perception and reasoning — prompt processing and language generation.
+
+**Key Functional Use Cases:**
+
+- Transform lesson plan requests into prompt formats.
+- Call OpenAI, Claude, or local LLMs.
+- Classify user intent: plan, score, explain, summarize.
+- Support persona injection (e.g., principal vs new teacher).
+- Apply validation logic before/after model call.
+- Use system + few-shot + user prompt structure.
+- Output structured JSON as needed (for downstream).
+- Provide model fallbacks or retries.
+- Inject tone control and formatting tags.
+- Return completion with latency and token usage.
+
+---
+
+### 4. upaguru-mind
+
+**Purpose:** Vector memory engine — long-term memory, recall, context linking.
+
+**Key Functional Use Cases:**
+
+- Convert all user and model inputs into embeddings.
+- Store vectors with metadata (subject, grade, task).
+- Retrieve nearest neighbors to inform responses.
+- Maintain semantic memory per user/session/role.
+- Enable memory wiping or replay per session.
+- Score relevance/confidence of memory hits.
+- Enable knowledge fusion across sessions.
+- Visualize memory structure (clusters, topics).
+- Summarize historical memory for quick reuse.
+- Support hybrid search (vector + metadata filters).
+
+---
+
+### 5. upaguru-iq
+
+**Purpose:** Scoring and diagnostics — evaluate copilot responses and impact.
+
+**Key Functional Use Cases:**
+
+- Evaluate lesson plan quality (clarity, depth, tone).
+- Run AI scoring models on copilot output.
+- Identify policy/standards violations.
+- Score factuality vs hallucination risk.
+- Aggregate scores by module, persona, user.
+- Raise alerts for low-quality or inconsistent output.
+- Support human-in-the-loop feedback scoring.
+- Provide interactive dashboards of quality trends.
+- Benchmark model/agent performance over time.
+- Feed insights into prompt tuning pipeline.
+
+---
+
+### 6. upaguru-forge
+
+**Purpose:** Developer and designer tools — extensibility, prompt tuning, SDKs.
+
+**Key Functional Use Cases:**
+
+- Maintain prompt libraries by goal and persona.
+- Version prompt templates with metadata.
+- Offer GUI or CLI for prompt experimentation.
+- Allow prompt A/B testing and side-by-side eval.
+- Store LLM configs (temperature, top_p, model).
+- Provide SDKs for building custom copilots.
+- Enable designer-authored prompts (no-code).
+- Maintain mock/test response scenarios.
+- Expose simulation endpoints for QA/test suites.
+- Document workflows and lifecycle per agent.
+
+---
+
+
+
+---
+
 ## Architecture
 
 > Diagram coming soon: shows how each module interacts (copilots → core → mind/sense)
