@@ -1,9 +1,9 @@
-# UpaguruVerse
+# UpaGuru Verse
 _A universe of AI copilots, crafted to guide, teach, and support the future of education._
 
-## What is UpaguruVerse?
+## What is UpaGuruVerse?
 
-**UpaguruVerse** is an ecosystem of intelligent educational assistants — copilots that analyze, summarize, recommend, and guide educators, students, and school administrators.
+**UpaGuruVerse** is an ecosystem of intelligent educational assistants — copilots that analyze, summarize, recommend, and guide educators, students, and school administrators.
 
 Each sub-product is a modular repo under this umbrella.
 
@@ -21,14 +21,93 @@ Each sub-product is a modular repo under this umbrella.
 | [upaguru-forge](https://github.com/your-org/upaguru-forge) | Tools & SDKs to extend the platform |
 
 ---
+# When To use UpaGuru Projects
 
-# UpaguruVerse Functional Plan
+Orchestrator -> MIND -> SENSE -> COPILOT
+
+## When To Use - UpaGuru-Mind
+
+- When you need to convert text to embeddings (vectors).
+
+- When you want to store and retrieve semantically similar content.
+
+- When you are building long-term memory, chunking documents, or preparing context for prompt injections.
+
+### Typical Inputs
+- Long documents, notes, transcripts, knowledge base entries.
+
+### Typical Outputs
+- Embedding vectors (e.g., 1536-dim OpenAI vector).
+
+- JSON metadata with source info.
+
+- Later: top-k similar records based on vector similarity.
+
+### Example Use Cases
+- Save learning logs or knowledge into memory.
+
+- Perform contextual recall before routing to sense or copilot.
+
+---
+## When To use UpaGuru-Sense - Understanding & NLP Processing
+
+- When you need to analyze, classify, summarize, or extract insights from a given text.
+
+- When you want to understand user intent, label text, or summarize large chunks.
+
+- When you need to clean up or filter content before passing to the next stage.
+
+### Typical Inputs
+- Raw paragraphs, documents, chat logs, OCR output.
+
+### Typical Outputs
+- Summary text, classification labels, key phrases, structured tags.
+
+### Example Use Cases
+- Summarize a knowledge base document.
+
+- Classify user query into predefined intents.
+
+- Extract PII, topics, or action items.
+
+---
+
+## When To use UpaGuru-CoPilot - Action & Response Generation
+
+- When you want to generate natural language output or code.
+
+- When you’re acting on a processed prompt and need a response, suggestion, or workflow plan.
+
+- When the agent must take decisions or provide step-wise guidance.
+
+### Typical Inputs
+- Cleaned, enriched, summarized prompts.
+
+- Context from mind or labels from sense.
+
+### Typical Outputs
+- Natural language answer.
+
+- Multi-step plan, task list.
+
+- Code snippet, command line, or instructions.
+
+### Example Use Cases
+- Provide explanation or advice based on recalled memory.
+
+- Generate an email or a document section.
+
+- Suggest next best action or step in a task.
+
+---
+
+# UpaGuruVerse Functional Plan
 
 _A functional breakdown of each module in the UpaguruVerse ecosystem, focusing on business value, user goals, and intelligent assistant capabilities._
 
 ---
 
-## What Is UpaguruVerse?
+## What Is UpaGuruVerse?
 
 **UpaguruVerse** is an ecosystem of intelligent educational assistants — copilots that analyze, summarize, recommend, and guide educators, students, and school administrators.
 
