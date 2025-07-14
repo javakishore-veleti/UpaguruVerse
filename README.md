@@ -9,6 +9,9 @@ Each sub-product is a modular repo under this umbrella.
 
 ---
 
+
+![UpaGuru Services Overview](docs/images/UpaGuru-Services-Overview.png)
+
 ## Sub-Projects
 
 | Module | Description |
